@@ -1,33 +1,18 @@
-name: Docker Build
+name: Docker Image CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Build Docker image
-        run: docker build -t aemet-back .
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: Juan76
-          password: dckr_pat_xWb0U3M9nJ3IaNuJjLWSubIVKn0
-
-      - name: Push Docker image
-        run: |
-          docker tag aemet-back Juan76/aemet-back:latest
-          docker push Juan76/aemet-back:latest
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
