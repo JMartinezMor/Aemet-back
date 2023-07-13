@@ -57,7 +57,7 @@ public class AemetService {
             logger.info("Respuesta Municipios: " + statusCode);
             return municipios;
         } else {
-            // La solicitud falló
+            // La solicitud falló con el codigo
             logger.info("La solicitud Municipios falló con el código de estado: " + statusCode);
         }
 
