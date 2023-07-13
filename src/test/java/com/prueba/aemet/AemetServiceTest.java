@@ -24,7 +24,7 @@ public class AemetServiceTest {
         municipioList = aemetService.getMunicipios();
         assertFalse(municipioList.isEmpty());
     }
-
+//test
     @Test
     void getPrediccionDiaSig() {
 
