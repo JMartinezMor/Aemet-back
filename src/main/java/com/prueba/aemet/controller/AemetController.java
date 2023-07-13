@@ -13,11 +13,10 @@ import com.prueba.aemet.service.AemetService;
 import java.util.List;
 
 @RestController
-@FeignClient(name = "aemet", url = "http://localhost:8080")
 public class AemetController {
     @Autowired
     private AemetService apiService;
-
+//devuelve string
     @GetMapping("/api/municipios")
     public List<MunicipioDTO> getMunicipios() throws JsonProcessingException {
         return apiService.getMunicipios();

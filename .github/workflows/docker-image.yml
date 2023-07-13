@@ -14,5 +14,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up JDK 18
+        uses: actions/setup-java@v2
+        with:
+          java-version: 18
+
+      - name: Clean Maven dependencies
+        run: mvn clean
+
+      - name: Install Maven dependencies
+        run: mvn install
+
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s) --progress=plain
+
