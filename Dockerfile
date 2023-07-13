@@ -1,6 +1,4 @@
-FROM openjdk:18.0.2
-VOLUME /tmp
-EXPOSE 8080
-ARG JAR_FILE=target/*.jar
-ADD ${JAR_FILE} app.jar
+FROM openjdk:18
+MAINTAINER aemet-back
+ADD target/aemet-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
