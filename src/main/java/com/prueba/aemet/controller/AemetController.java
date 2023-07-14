@@ -1,10 +1,8 @@
 package com.prueba.aemet.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.prueba.aemet.modelDTO.MunicipioDTO;
 import com.prueba.aemet.modelDTO.PrediccionMunDiaSigDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
