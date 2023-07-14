@@ -8,6 +8,8 @@ import com.prueba.aemet.service.AemetService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -19,7 +21,7 @@ public class AemetServiceTest {
     @Autowired
     private AemetService aemetService;
     @Test
-    void getMunicipios() throws JsonProcessingException {
+    void getMunicipios() throws IOException {
         List<MunicipioDTO> municipioList;
         municipioList = aemetService.getMunicipios();
         assertFalse(municipioList.isEmpty());

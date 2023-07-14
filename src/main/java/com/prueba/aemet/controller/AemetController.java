@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.prueba.aemet.service.AemetService;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class AemetController {
     private AemetService apiService;
 //devuelve string
     @GetMapping("/api/municipios")
-    public List<MunicipioDTO> getMunicipios() throws JsonProcessingException {
+    public List<MunicipioDTO> getMunicipios() throws IOException {
         return apiService.getMunicipios();
     }
 

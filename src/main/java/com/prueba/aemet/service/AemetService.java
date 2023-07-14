@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -39,7 +40,7 @@ public class AemetService {
     @Value("${diasig}")
     private String diaSig;
 
-    public List<MunicipioDTO> getMunicipios() throws JsonProcessingException {
+    public List<MunicipioDTO> getMunicipios() throws IOException {
         String url = urlBase + municipio + apiKey;
 
         try {
